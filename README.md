@@ -1,1 +1,5 @@
-# django-mini-project
+registration
+login
+logout
+products add
+profile picture upload
