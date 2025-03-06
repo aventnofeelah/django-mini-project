@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User - {{ request.user.username }}</title>
+</head>
+<body>
+    <div id="main">
+        <p>User name: {{ request.user.username }}</p>
+        <p>Products: </p>
+        {% for product in products %}
+            {{ product.name }} - {{ product.price }}
+        {% empty %}
+            <p>No products</p>
+        {% endfor %}
+        {% if request.user == user %}
+            <a href="{% url 'add_product_path' user.id %}">Add products</a>
+        {% endif %}
+    </div>
+</body>
+</html>

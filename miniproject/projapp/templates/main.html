@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <title>Main Page</title>
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+           {% if user.is_authenticated %}
+                <div>
+                    <p>{{ request.user.username }}</p>
+                    <a href="{% url 'profile_path' user.id %}">Your profile</a>
+                    <a href="{% url 'logout_path' %}">Log Out</a>
+                </div>
+           {% else %}
+                <div id="reg-log-div">
+                    <a href="{% url 'register_path' %}">Sign up</a>
+                    <a href="{% url 'login_path' %}">Log in</a>
+                </div>
+           {% endif %} 
+        </div>
+        <div id="middle">
+            <p>This is main page</p>
+        </div>
+    </div>
+</body>
+</html>
