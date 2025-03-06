@@ -1,5 +1,5 @@
-registration
-login
-logout
-products add
-profile picture upload
+registration<br>
+login<br>
+logout<br>
+products add<br>
+profile picture upload<br>
